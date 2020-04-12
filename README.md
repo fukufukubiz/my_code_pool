@@ -1,2 +1,2 @@
 # my_code_pool
-My code store. Trial, practice ... 
+My code store. Trial, practice ... etc.
