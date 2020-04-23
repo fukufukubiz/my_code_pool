@@ -16,13 +16,15 @@
 from recommonmark.parser import CommonMarkParser
 from recommonmark.transform import AutoStructify
 import sphinx_rtd_theme
+import os
+import datetime
 
 # -- Project information -----------------------------------------------------
 
 project = 'test_pj'
-copyright = '2020, me'
+#copyright = '2020, me'
+copyright = '{year}, me.'.format(year=datetime.datetime.now().year)
 author = 'me'
-
 
 # -- General configuration ---------------------------------------------------
 
@@ -61,8 +63,11 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = "sphinx_rtd_theme"
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+
+import rtcat_sphinx_theme
+html_theme = "rtcat_sphinx_theme"
+html_theme_path = [rtcat_sphinx_theme.get_html_theme_path()]
+html_style = "css/my_theme.css"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
@@ -13,42 +13,44 @@
 
   
   
-  
+
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
-        <script src="_static/translations.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
     
 
   
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="index" title="索引" href="genindex.html" />
-    <link rel="search" title="検索" href="search.html" />
-    <link rel="next" title="3. その他の拡張機能" href="sub1.html" />
-    <link rel="prev" title="test_pj Documentation" href="index.html" /> 
+
+  
+  
+    <link rel="stylesheet" href="_static/css/my_theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="test_pj  ドキュメント" href="index.html"/>
+        <link rel="next" title="3. その他の拡張機能" href="sub1.html"/>
+        <link rel="prev" title="test_pj Documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
 </head>
 
-<body class="wy-body-for-nav">
+<body class="wy-body-for-nav" role="document">
 
    
   <div class="wy-grid-for-nav">
+
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search">
           
 
           
@@ -79,10 +81,7 @@
           
             
             
-              
-            
-            
-              <ul class="current">
+                <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">1. Markdown to Sphinx(reST)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id1">1.1. 参考サイト</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id2">1.2. インストール</a><ul>
@@ -121,7 +120,9 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="sub1.html">3. その他の拡張機能</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sub2.html">4. おまけ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sub1.html#id2">4. その他のテーマ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sub2.html">5. おまけ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sub2.html#id3">6. テーマのカスタマイズ</a></li>
 </ul>
 
             
@@ -133,7 +134,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" aria-label="top navigation">
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">test_pj</a>
@@ -141,13 +142,10 @@
       </nav>
 
 
+      
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
           
-
-
 
 
 
@@ -162,7 +160,6 @@
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
-
   <ul class="wy-breadcrumbs">
     
       <li><a href="index.html">Docs</a> &raquo;</li>
@@ -179,8 +176,6 @@
       </li>
     
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -316,9 +311,9 @@ chapter3
 <ul class="simple">
 <li><p>定番のsphinxテーマ</p>
 <ul>
-<li><p>Read The Docs</p>
+<li><p>sphinx_rtd_theme</p>
 <ul>
-<li><p><a class="reference external" href="https://docs.readthedocs.io/en/latest/theme.html">https://docs.readthedocs.io/en/latest/theme.html</a></p></li>
+<li><p><a class="reference external" href="https://sphinx-themes.org/html/sphinx_rtd_theme/sphinx_rtd_theme/index.html">https://sphinx-themes.org/html/sphinx_rtd_theme/sphinx_rtd_theme/index.html</a></p></li>
 </ul>
 </li>
 </ul>
@@ -533,6 +528,16 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 </pre></div>
 </div>
 </li>
+<li><p>before</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>copyright = &#39;2020, XXXXX&#39;
+</pre></div>
+</div>
+</li>
+<li><p>after</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>copyright = &#39;{year}, XXXXX.&#39;.format(year=datetime.datetime.now().year)
+</pre></div>
+</div>
+</li>
 </ul>
 </li>
 <li><p>conf.py に以下の記述を冒頭に記述する。</p>
@@ -553,6 +558,8 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">recommonmark.parser</span> <span class="kn">import</span> <span class="n">CommonMarkParser</span>
 <span class="kn">from</span> <span class="nn">recommonmark.transform</span> <span class="kn">import</span> <span class="n">AutoStructify</span>
 <span class="kn">import</span> <span class="nn">sphinx_rtd_theme</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
 </pre></div>
 </div>
 </li>
@@ -570,6 +577,8 @@ actdiag_html_image_format = &#39;SVG&#39;
 nwdiag_html_image_format = &#39;SVG&#39;
 rackiag_html_image_format = &#39;SVG&#39;
 packetdiag_html_image_format = &#39;SVG&#39;
+
+copyright = &#39;{year}, edX Inc.&#39;.format(year=datetime.datetime.now().year)
 
 github_doc_root = &#39;https://github.com/rtfd/recommonmark/tree/master/doc/&#39;
 def setup(app):
@@ -887,16 +896,15 @@ IndexError: list index out of range
 
 
            </div>
-           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="sub1.html" class="btn btn-neutral float-right" title="3. その他の拡張機能" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="sub1.html" class="btn btn-neutral float-right" title="3. その他の拡張機能" accesskey="n">Next →</a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="test_pj Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral" title="test_pj Documentation" accesskey="p">← Previous</a>
       
     </div>
   
@@ -905,11 +913,11 @@ IndexError: list index out of range
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, me
+        &copy; Copyright 2020, me..
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a>. 
 
 </footer>
 
@@ -922,15 +930,38 @@ IndexError: list index out of range
   
 
 
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script>
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE: 'true'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/language_data.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
 
   
   
-    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
    
 
 </body>

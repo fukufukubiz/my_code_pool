@@ -102,8 +102,8 @@ pip install Sphinx commonmark recommonmark
 ### テーマ
 
 - 定番のsphinxテーマ
-  - Read The Docs
-    - <https://docs.readthedocs.io/en/latest/theme.html>
+  - sphinx_rtd_theme
+    - <https://sphinx-themes.org/html/sphinx_rtd_theme/sphinx_rtd_theme/index.html>
 
 - インストールコマンド
   
@@ -295,6 +295,18 @@ make livehtml
     html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
     ```
 
+  - before
+
+    ``` text
+    copyright = '2020, XXXXX'
+    ```
+
+  - after
+
+    ``` text
+    copyright = '{year}, XXXXX.'.format(year=datetime.datetime.now().year)
+    ```
+
 - conf.py に以下の記述を冒頭に記述する。
   - 「# -- Path setup 」と書かれたコメントを探し、そのエリアに記述すると良い。
   - conf.py の冒頭に以下の記述がある。
@@ -315,6 +327,8 @@ make livehtml
       from recommonmark.parser import CommonMarkParser
       from recommonmark.transform import AutoStructify
       import sphinx_rtd_theme
+      import os
+      import datetime
       ```
 
 - conf.py の末尾に、以下の記述を追記する。
@@ -331,6 +345,8 @@ make livehtml
   nwdiag_html_image_format = 'SVG'
   rackiag_html_image_format = 'SVG'
   packetdiag_html_image_format = 'SVG'
+
+  copyright = '{year}, edX Inc.'.format(year=datetime.datetime.now().year)
 
   github_doc_root = 'https://github.com/rtfd/recommonmark/tree/master/doc/'
   def setup(app):

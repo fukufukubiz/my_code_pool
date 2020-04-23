@@ -56,3 +56,11 @@
       - > As it's written in the code of quickstart.py.  
         > the package name has changed to sphinx.cmd.quickstart.  
         > So I just replaced the path from sphinx.quickstart to sphinx.cmd.quickstart.  
+
+# テーマのカスタマイズ
+
+- <http://kuttsun.blogspot.com/2016/11/sphinx-sphinxrtdtheme.html>
+  - こちら参照
+  - 注意点として、
+    > _static/css/my_theme.css を作成します。
+  - と書かれているディレクトリは、`_build/html/_static/css/my_theme.css` を指しているということ。
