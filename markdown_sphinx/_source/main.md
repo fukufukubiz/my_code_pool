@@ -1,14 +1,17 @@
 # Markdown to Sphinx(reST)
 
-本書は、MarkdownでSphinxドキュメントを生成する方法についてまとめたものである。  
+本書は、MarkdownでSphinxドキュメントを記述・生成する方法についてまとめたものである。  
 
-本来はreSTという独自の記述方式を用いる必要があるが、  
-reSTを新たに覚えるのが面倒になる。  
+Sphinxドキュメントを記載するには、従来はreStructuredText(reST)という  
+独自の記述方式を用いる必要があるが、reSTを新たに覚えるのが面倒である。  
+
+- reStructuredText入門
+  - <https://www.sphinx-doc.org/ja/stable/rest.html>
 
 そこで、広く普及しているMarkdownで記述できたら便利だろう、  
 ということでその手法をまとめてみた。
 
-## 参考サイト
+## 参考にしたサイト
 
 - Sphinxを便利にして、みんなに使ってもらいたい (2017年03月06日)
   - <https://qiita.com/pashango2/items/d1b379b699af85b529ce>
@@ -19,12 +22,23 @@ reSTを新たに覚えるのが面倒になる。
 - 化学系のための Sphinx の文章作成マニュアル (2017)
   - <https://www1.gifu-u.ac.jp/~fujilab/sphinx_html/index.html>
 
-- aSphinx から完全に reStructuredText を追い出した話 (2016-12-29)
+- Sphinx から完全に reStructuredText を追い出した話 (2016-12-29)
   - <https://tk0miya.hatenablog.com/entry/2016/12/29/232900>
 
 ``` eval_rst
 .. note:: Googleで検索して出てくるsphinx関係のまとめ記事が軒並み古いため、現時点(2020/4)でも通用するのかを確認して、最新情報を残す意味も込めてまとめてみた。
 ```
+
+## 流れ
+
+- インストール
+  - sphinx本体をインストールする
+  - 拡張機能系をインストールする
+  - テーマをインストールする
+- 初期設定
+  - quickstartを実行する
+- conf.pyの編集
+- Sphinxドキュメントの記述
 
 ## インストール
 
@@ -114,15 +128,18 @@ pip install sphinx_rtd_theme
 - config(conf.py)の書き方
   - 後述
 
-## ドキュメント生成手順
+## 初期設定
+
+- フォルダを作成する
+- フォルダに移動する
+
+### ドキュメント生成手順を踏む
 
 ``` eval_rst
 .. note:: 以下の手順を踏む事で、必要なフォルダ構成、ファイル類が生成される。ここで生成される conf.py を後ほど編集して環境を整えていく。
 ```
 
-- フォルダを作成する
-- フォルダに移動する
-- ターミナルを起動する
+- (移動したフォルダで)ターミナルを起動する
 - 以下のコマンド実行する
   
     ``` bash
@@ -194,10 +211,14 @@ pip install sphinx_rtd_theme
 
 - conf.pyを編集する。
   - 編集方法は後述。
+
+### ビルドの設定
+
 - 文章を書きたいmarkdownファイルを生成する。
-  - ex : main.md , sub.md
+  - ここでは設定手順を踏んで動作確認するために適当なファイルを準備してみる。
+    - ex : main.md , sub.md
 - index.toc ファイルを生成する。
-  - 作成したmarkdownファイル名（拡張子なし）を列挙する。
+  - 先ほど作成したmarkdownファイル名（拡張子なし）を列挙する。
     - ex :
 
         ``` text
@@ -205,7 +226,9 @@ pip install sphinx_rtd_theme
         sub
         ```
 
-- markdownファイルを編集する。
+- （markdownファイルを編集する。）
+  - ドキュメントを実際に段階ではmdファイルにmarkdownを書いていく
+  - ここではビルド確認のために手順を踏むだけなので、お試しで一文だけでも適当に書いておけば良い
 - ビルドをする。
 
   ``` bash
@@ -215,12 +238,12 @@ pip install sphinx_rtd_theme
 - ビルド完了後、以下を参照する。
   - [現在のフォルダ]/_build/html/index.html
 
-## ドキュメントの自動生成
+### Sphinxドキュメントの自動生成設定
 
 - 上記の手順では、markdownを修正する度に手動で `make html` を実行する必要がある。
 - そこで、次のプラグインを使用して自動ビルドできるようにする。
 
-### sphinx-autobuild
+- `sphinx-autobuild` をインストールする
 
 - インストールコマンド
 
@@ -240,7 +263,8 @@ sphinx-autobuild  <ソースディレクトリ> <ビルド成果物出力ディ�
 sphinx-autobuild ./ ./sq/_build/html/index.html
 ```
 
-- 上記でも良いが、さらに楽するには、Makefileを編集する。
+- 上記コマンドを都度入力しても良いが、長いため忘れがち。
+- さらに楽するには、Makefileを編集する。
 - Makefileの末尾に以下を追記する。
 
 ``` text
@@ -369,12 +393,15 @@ make livehtml
 
 ## toctree生成 / 他ドキュメントへのリンク
 
+``` text
+- [Title1](sub1.md)
+- [Title2](sub2.md)
+```
+
 - [Title1](sub1.md)
 - [Title2](sub2.md)
 
-[Title1](sub1.md)
-
-## math
+## math系
 
 - <https://www.sphinx-doc.org/ja/1.6/ext/math.html#math-support>
 
@@ -407,6 +434,8 @@ E = m c^2
 ``` math
 e^{i\pi} + 1 = 0
 ```
+
+- 「eval_rst」の中に「math」を記述する場合
 
 ``` text
     ``` eval_rst
@@ -464,7 +493,7 @@ True   True   True
 =====  =====  =======
 ```
 
-### 【参考】 markdown表記の場合
+### 注意! markdown表記は使用できない
 
 ``` text
 |A     | B     |A and B|
@@ -475,8 +504,8 @@ True   True   True
 |True  |True   |True   |
 ```
 
-- ただし markdown -> sphinxの場合は、  
-  従来のmarkdownの表が正しく出力さない。
+- markdown -> sphinx(reST)で記述する場合は、  
+  従来のmarkdownの表が認識さない。
 
 |A     | B     |A and B|
 |------|-------|-------|
@@ -486,17 +515,18 @@ True   True   True
 |True  |True   |True   |
 
 - このように崩れてしまう...
+- これは仕様のため諦めるしかない。
 
 ## 注釈など
 
 - markdownにはなく、reSTでしか表現できないもの
+- 記述は若干面倒だが、見栄えは良いので使いこなすとかっこいい。
 
 ``` text
     ``` eval_rst
     .. seealso:: This is a simple **seealso** note  
     ```
 ```
-
 ``` eval_rst
 .. seealso:: This is a simple **seealso** note  
 ```

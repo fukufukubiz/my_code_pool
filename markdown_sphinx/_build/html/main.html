@@ -83,21 +83,23 @@
             
                 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">1. Markdown to Sphinx(reST)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">1.1. 参考サイト</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">1.2. インストール</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id3">1.2.1. 前提</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sphinx">1.2.2. Sphinx</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">1.2.3. 拡張機能系</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#sphinxcontrib-toc">1.2.3.1. sphinxcontrib-toc</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#blockdiag">1.2.3.2. blockdiag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">1.1. 参考にしたサイト</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">1.2. 流れ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">1.3. インストール</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">1.3.1. 前提</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sphinx">1.3.2. Sphinx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">1.3.3. 拡張機能系</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sphinxcontrib-toc">1.3.3.1. sphinxcontrib-toc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#blockdiag">1.3.3.2. blockdiag</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">1.2.4. テーマ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">1.3.4. テーマ</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id6">1.3. ドキュメント生成手順</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id7">1.4. ドキュメントの自動生成</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#sphinx-autobuild">1.4.1. sphinx-autobuild</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">1.4. 初期設定</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id8">1.4.1. ドキュメント生成手順を踏む</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">1.4.2. ビルドの設定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">1.4.3. Sphinxドキュメントの自動生成設定</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#conf-py">1.5. conf.py の編集</a></li>
@@ -105,18 +107,18 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="#markdown-to-sphinx">2. Markdown to Sphinx 記述例</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#toctree">2.1. toctree生成 / 他ドキュメントへのリンク</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#math">2.2. math</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id8">2.3. 原子記号</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#math">2.2. math系</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">2.3. 原子記号</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#commonmark">2.4. Commonmarkの表</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#markdown">2.4.1. 【参考】 markdown表記の場合</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#markdown">2.4.1. 注意! markdown表記は使用できない</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id9">2.5. 注釈など</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id12">2.5. 注釈など</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#uml">2.6. UML</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#uml-mermaid-js">2.6.1. 【参考】 UML - mermaid.js</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id10">2.7. 注意</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id13">2.7. 注意</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="sub1.html">3. その他の拡張機能</a></li>
@@ -183,11 +185,18 @@
             
   <div class="section" id="markdown-to-sphinx-rest">
 <h1><span class="section-number">1. </span>Markdown to Sphinx(reST)<a class="headerlink" href="#markdown-to-sphinx-rest" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>本書は、MarkdownでSphinxドキュメントを生成する方法についてまとめたものである。</p>
-<p>本来はreSTという独自の記述方式を用いる必要があるが、<br />reSTを新たに覚えるのが面倒になる。</p>
+<p>本書は、MarkdownでSphinxドキュメントを記述・生成する方法についてまとめたものである。</p>
+<p>Sphinxドキュメントを記載するには、従来はreStructuredText(reST)という<br />独自の記述方式を用いる必要があるが、reSTを新たに覚えるのが面倒である。</p>
+<ul class="simple">
+<li><p>reStructuredText入門</p>
+<ul>
+<li><p><a class="reference external" href="https://www.sphinx-doc.org/ja/stable/rest.html">https://www.sphinx-doc.org/ja/stable/rest.html</a></p></li>
+</ul>
+</li>
+</ul>
 <p>そこで、広く普及しているMarkdownで記述できたら便利だろう、<br />ということでその手法をまとめてみた。</p>
 <div class="section" id="id1">
-<h2><span class="section-number">1.1. </span>参考サイト<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">1.1. </span>参考にしたサイト<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
 <li><p>Sphinxを便利にして、みんなに使ってもらいたい (2017年03月06日)</p>
 <ul>
@@ -204,7 +213,7 @@
 <li><p><a class="reference external" href="https://www1.gifu-u.ac.jp/~fujilab/sphinx_html/index.html">https://www1.gifu-u.ac.jp/~fujilab/sphinx_html/index.html</a></p></li>
 </ul>
 </li>
-<li><p>aSphinx から完全に reStructuredText を追い出した話 (2016-12-29)</p>
+<li><p>Sphinx から完全に reStructuredText を追い出した話 (2016-12-29)</p>
 <ul>
 <li><p><a class="reference external" href="https://tk0miya.hatenablog.com/entry/2016/12/29/232900">https://tk0miya.hatenablog.com/entry/2016/12/29/232900</a></p></li>
 </ul>
@@ -216,15 +225,34 @@
 </div>
 </div>
 <div class="section" id="id2">
-<h2><span class="section-number">1.2. </span>インストール<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">1.2. </span>流れ<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li><p>インストール</p>
+<ul>
+<li><p>sphinx本体をインストールする</p></li>
+<li><p>拡張機能系をインストールする</p></li>
+<li><p>テーマをインストールする</p></li>
+</ul>
+</li>
+<li><p>初期設定</p>
+<ul>
+<li><p>quickstartを実行する</p></li>
+</ul>
+</li>
+<li><p>conf.pyの編集</p></li>
+<li><p>Sphinxドキュメントの記述</p></li>
+</ul>
+</div>
 <div class="section" id="id3">
-<h3><span class="section-number">1.2.1. </span>前提<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h2><span class="section-number">1.3. </span>インストール<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id4">
+<h3><span class="section-number">1.3.1. </span>前提<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
 <li><p>python3.x系が入っている事</p></li>
 </ul>
 </div>
 <div class="section" id="sphinx">
-<h3><span class="section-number">1.2.2. </span>Sphinx<a class="headerlink" href="#sphinx" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">1.3.2. </span>Sphinx<a class="headerlink" href="#sphinx" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
 <li><p>インストールコマンド</p></li>
 </ul>
@@ -232,10 +260,10 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id4">
-<h3><span class="section-number">1.2.3. </span>拡張機能系<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="id5">
+<h3><span class="section-number">1.3.3. </span>拡張機能系<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="section" id="sphinxcontrib-toc">
-<h4><span class="section-number">1.2.3.1. </span>sphinxcontrib-toc<a class="headerlink" href="#sphinxcontrib-toc" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<h4><span class="section-number">1.3.3.1. </span>sphinxcontrib-toc<a class="headerlink" href="#sphinxcontrib-toc" title="このヘッドラインへのパーマリンク">¶</a></h4>
 <ul>
 <li><p><a class="reference external" href="https://tk0miya.hatenablog.com/entry/2016/12/29/232900">https://tk0miya.hatenablog.com/entry/2016/12/29/232900</a></p>
 <ul class="simple">
@@ -268,7 +296,7 @@ chapter3
 </ul>
 </div>
 <div class="section" id="blockdiag">
-<h4><span class="section-number">1.2.3.2. </span>blockdiag<a class="headerlink" href="#blockdiag" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<h4><span class="section-number">1.3.3.2. </span>blockdiag<a class="headerlink" href="#blockdiag" title="このヘッドラインへのパーマリンク">¶</a></h4>
 <ul>
 <li><p><a class="reference external" href="http://blockdiag.com/ja/blockdiag/index.html">http://blockdiag.com/ja/blockdiag/index.html</a></p>
 <ul class="simple">
@@ -306,8 +334,8 @@ chapter3
 </ul>
 </div>
 </div>
-<div class="section" id="id5">
-<h3><span class="section-number">1.2.4. </span>テーマ<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="id6">
+<h3><span class="section-number">1.3.4. </span>テーマ<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
 <li><p>定番のsphinxテーマ</p>
 <ul>
@@ -332,16 +360,20 @@ chapter3
 </ul>
 </div>
 </div>
-<div class="section" id="id6">
-<h2><span class="section-number">1.3. </span>ドキュメント生成手順<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id7">
+<h2><span class="section-number">1.4. </span>初期設定<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li><p>フォルダを作成する</p></li>
+<li><p>フォルダに移動する</p></li>
+</ul>
+<div class="section" id="id8">
+<h3><span class="section-number">1.4.1. </span>ドキュメント生成手順を踏む<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
 <p>以下の手順を踏む事で、必要なフォルダ構成、ファイル類が生成される。ここで生成される conf.py を後ほど編集して環境を整えていく。</p>
 </div>
 <ul>
-<li><p>フォルダを作成する</p></li>
-<li><p>フォルダに移動する</p></li>
-<li><p>ターミナルを起動する</p></li>
+<li><p>(移動したフォルダで)ターミナルを起動する</p></li>
 <li><p>以下のコマンド実行する</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sphinx-quickstart
 </pre></div>
@@ -415,14 +447,23 @@ drwxr-xr-x  <span class="m">9</span> user  group   <span class="m">288</span>  <
 <li><p>編集方法は後述。</p></li>
 </ul>
 </li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h3><span class="section-number">1.4.2. </span>ビルドの設定<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul>
 <li><p>文章を書きたいmarkdownファイルを生成する。</p>
 <ul class="simple">
+<li><p>ここでは設定手順を踏んで動作確認するために適当なファイルを準備してみる。</p>
+<ul>
 <li><p>ex : main.md , sub.md</p></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><p>index.toc ファイルを生成する。</p>
 <ul>
-<li><p>作成したmarkdownファイル名（拡張子なし）を列挙する。</p>
+<li><p>先ほど作成したmarkdownファイル名（拡張子なし）を列挙する。</p>
 <ul>
 <li><p>ex :</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>main
@@ -434,7 +475,12 @@ sub
 </li>
 </ul>
 </li>
-<li><p>markdownファイルを編集する。</p></li>
+<li><p>（markdownファイルを編集する。）</p>
+<ul class="simple">
+<li><p>ドキュメントを実際に段階ではmdファイルにmarkdownを書いていく</p></li>
+<li><p>ここではビルド確認のために手順を踏むだけなので、お試しで一文だけでも適当に書いておけば良い</p></li>
+</ul>
+</li>
 <li><p>ビルドをする。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make html
 </pre></div>
@@ -447,15 +493,12 @@ sub
 </li>
 </ul>
 </div>
-<div class="section" id="id7">
-<h2><span class="section-number">1.4. </span>ドキュメントの自動生成<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id10">
+<h3><span class="section-number">1.4.3. </span>Sphinxドキュメントの自動生成設定<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
 <li><p>上記の手順では、markdownを修正する度に手動で <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code> を実行する必要がある。</p></li>
 <li><p>そこで、次のプラグインを使用して自動ビルドできるようにする。</p></li>
-</ul>
-<div class="section" id="sphinx-autobuild">
-<h3><span class="section-number">1.4.1. </span>sphinx-autobuild<a class="headerlink" href="#sphinx-autobuild" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sphinx-autobuild</span></code> をインストールする</p></li>
 <li><p>インストールコマンド</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install sphinx-autobuild
@@ -474,7 +517,8 @@ sub
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>上記でも良いが、さらに楽するには、Makefileを編集する。</p></li>
+<li><p>上記コマンドを都度入力しても良いが、長いため忘れがち。</p></li>
+<li><p>さらに楽するには、Makefileを編集する。</p></li>
 <li><p>Makefileの末尾に以下を追記する。</p></li>
 </ul>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>livehtml:
@@ -613,14 +657,17 @@ def setup(app):
 <h1><span class="section-number">2. </span>Markdown to Sphinx 記述例<a class="headerlink" href="#markdown-to-sphinx" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="section" id="toctree">
 <h2><span class="section-number">2.1. </span>toctree生成 / 他ドキュメントへのリンク<a class="headerlink" href="#toctree" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>- [Title1](sub1.md)
+- [Title2](sub2.md)
+</pre></div>
+</div>
 <ul class="simple">
 <li><p><a class="reference internal" href="sub1.html"><span class="doc">Title1</span></a></p></li>
 <li><p><a class="reference internal" href="sub2.html"><span class="doc">Title2</span></a></p></li>
 </ul>
-<p><a class="reference internal" href="sub1.html"><span class="doc">Title1</span></a></p>
 </div>
 <div class="section" id="math">
-<h2><span class="section-number">2.2. </span>math<a class="headerlink" href="#math" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">2.2. </span>math系<a class="headerlink" href="#math" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.sphinx-doc.org/ja/1.6/ext/math.html#math-support">https://www.sphinx-doc.org/ja/1.6/ext/math.html#math-support</a></p></li>
 </ul>
@@ -645,6 +692,9 @@ def setup(app):
 </div>
 <div class="math notranslate nohighlight">
 \[e^{i\pi} + 1 = 0\]</div>
+<ul class="simple">
+<li><p>「eval_rst」の中に「math」を記述する場合</p></li>
+</ul>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>    ``` eval_rst
     .. math::
         (a + b)^2 &amp;= (a + b)(a + b) \\
@@ -656,8 +706,8 @@ def setup(app):
 \[\begin{split}(a + b)^2 &amp;= (a + b)(a + b) \\
           &amp;= a^2 + 2ab + b^2\end{split}\]</div>
 </div>
-<div class="section" id="id8">
-<h2><span class="section-number">2.3. </span>原子記号<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id11">
+<h2><span class="section-number">2.3. </span>原子記号<a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>    ``` eval_rst
     H
     :subscript:`2`
@@ -715,7 +765,7 @@ O</p>
 </tbody>
 </table>
 <div class="section" id="markdown">
-<h3><span class="section-number">2.4.1. </span>【参考】 markdown表記の場合<a class="headerlink" href="#markdown" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">2.4.1. </span>注意! markdown表記は使用できない<a class="headerlink" href="#markdown" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>|A     | B     |A and B|
 |------|-------|-------|
 |False |False  |False  |
@@ -725,7 +775,7 @@ O</p>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>ただし markdown -&gt; sphinxの場合は、<br />従来のmarkdownの表が正しく出力さない。</p></li>
+<li><p>markdown -&gt; sphinx(reST)で記述する場合は、<br />従来のmarkdownの表が認識さない。</p></li>
 </ul>
 <p>|A     | B     |A and B|
 |------|-------|-------|
@@ -735,13 +785,15 @@ O</p>
 |True  |True   |True   |</p>
 <ul class="simple">
 <li><p>このように崩れてしまう...</p></li>
+<li><p>これは仕様のため諦めるしかない。</p></li>
 </ul>
 </div>
 </div>
-<div class="section" id="id9">
-<h2><span class="section-number">2.5. </span>注釈など<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id12">
+<h2><span class="section-number">2.5. </span>注釈など<a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
 <li><p>markdownにはなく、reSTでしか表現できないもの</p></li>
+<li><p>記述は若干面倒だが、見栄えは良いので使いこなすとかっこいい。</p></li>
 </ul>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>    ``` eval_rst
     .. seealso:: This is a simple **seealso** note  
@@ -846,8 +898,8 @@ O</p>
 </ul>
 </div>
 </div>
-<div class="section" id="id10">
-<h2><span class="section-number">2.7. </span>注意<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id13">
+<h2><span class="section-number">2.7. </span>注意<a class="headerlink" href="#id13" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>以下の記述はエラーを招く</p>
 <ul class="simple">
 <li><p>インライン数式</p></li>
