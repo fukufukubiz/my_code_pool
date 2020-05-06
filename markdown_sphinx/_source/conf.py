@@ -21,10 +21,10 @@ import datetime
 
 # -- Project information -----------------------------------------------------
 
-project = 'test_pj'
-#copyright = '2020, me'
+project = 'markdown_to_sphinx'
+#copyright = '2020, fkd'
 copyright = '{year}, me.'.format(year=datetime.datetime.now().year)
-author = 'me'
+author = 'fkd'
 
 # -- General configuration ---------------------------------------------------
 
